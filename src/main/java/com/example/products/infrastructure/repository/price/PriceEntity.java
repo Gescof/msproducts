@@ -24,7 +24,7 @@ import java.util.Currency;
 @AllArgsConstructor
 @Getter
 @Setter
-@Builder
+@Builder(toBuilder = true)
 @ToString
 @EqualsAndHashCode
 public class PriceEntity {

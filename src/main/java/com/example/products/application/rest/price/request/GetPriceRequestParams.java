@@ -8,7 +8,7 @@ import org.springframework.format.annotation.NumberFormat;
 import java.time.LocalDateTime;
 
 @Data
-@Builder
+@Builder(toBuilder = true)
 public class GetPriceRequestParams {
 
     @DateTimeFormat(pattern = "yyyy-MM-dd-HH.mm.ss")

@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.util.Currency;
 
 @Data
-@Builder
+@Builder(toBuilder = true)
 public class Price {
     private Long brandId;
     private LocalDateTime startDate;

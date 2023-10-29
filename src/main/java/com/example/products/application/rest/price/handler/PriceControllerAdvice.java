@@ -1,6 +1,7 @@
 package com.example.products.application.rest.price.handler;
 
 import com.example.products.application.rest.price.response.ErrorResponse;
+import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,7 @@ import java.util.List;
 @RestControllerAdvice
 @Slf4j
 @RequiredArgsConstructor
+@Builder(toBuilder = true)
 public class PriceControllerAdvice {
 
     private final Clock clock;

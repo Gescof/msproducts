@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Currency;
 
-@Builder
+@Builder(toBuilder = true)
 public record GetPricesOdto(
         Long brandId,
         LocalDateTime startDate,

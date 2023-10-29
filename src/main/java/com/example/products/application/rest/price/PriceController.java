@@ -8,8 +8,10 @@ import com.example.products.domain.service.price.PriceService;
 import com.example.products.domain.service.price.idtos.GetPricesIdto;
 import com.example.products.domain.service.price.odtos.GetPricesOdto;
 import jakarta.validation.Valid;
+import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,13 +23,14 @@ import java.util.List;
 @RestController
 @Slf4j
 @RequiredArgsConstructor
+@Builder(toBuilder = true)
 public class PriceController {
 
     private final PriceRequestMapper requestMapper;
     private final PriceResponseMapper responseMapper;
     private final PriceService priceService;
 
-    @GetMapping("prices")
+    @GetMapping(value = "prices", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<GetPricesResponse> getPrices(@Valid final GetPriceRequestParams requestParams) {
         log.info(String.format("GET /prices with params: %s", requestParams.toString()));
 

@@ -61,14 +61,14 @@ class DomainPriceServiceTest {
         static Stream<Arguments> getPricesByParametersData() {
             // Test 1
             GetPricesIdto idto1 = GetPricesIdto.builder()
-                    .applicationDate(LocalDateTime.of(2020, 6, 14, 10, 0, 0))
+                    .applicationDate(LocalDateTime.parse("2020-06-14T10:00:00"))
                     .productId(34555L)
                     .brandId(1L)
                     .build();
             List<Price> expectedPrices1 = Collections.singletonList(Price.builder()
                     .brandId(idto1.brandId())
-                    .startDate(LocalDateTime.of(2020, 6, 14, 0, 0, 0))
-                    .endDate(LocalDateTime.of(2020, 12, 31, 23, 59, 59))
+                    .startDate(LocalDateTime.parse("2020-06-14T00:00:00"))
+                    .endDate(LocalDateTime.parse("2020-12-31T23:59:59"))
                     .priceList(1)
                     .productId(idto1.productId())
                     .priority(0)
@@ -78,8 +78,8 @@ class DomainPriceServiceTest {
             );
             List<GetPricesOdto> expectedOdtos1 = Collections.singletonList(GetPricesOdto.builder()
                     .brandId(idto1.brandId())
-                    .startDate(LocalDateTime.of(2020, 6, 14, 0, 0, 0))
-                    .endDate(LocalDateTime.of(2020, 12, 31, 23, 59, 59))
+                    .startDate(LocalDateTime.parse("2020-06-14T00:00:00"))
+                    .endDate(LocalDateTime.parse("2020-12-31T23:59:59"))
                     .priceList(1)
                     .productId(idto1.productId())
                     .priority(0)
@@ -90,14 +90,14 @@ class DomainPriceServiceTest {
 
             // Test 2
             GetPricesIdto idto2 = GetPricesIdto.builder()
-                    .applicationDate(LocalDateTime.of(2020, 6, 16, 21, 0, 0))
+                    .applicationDate(LocalDateTime.parse("2020-06-16T21:00:00"))
                     .productId(34555L)
                     .brandId(1L)
                     .build();
             List<Price> expectedPrices2 = List.of(Price.builder()
                             .brandId(idto2.brandId())
-                            .startDate(LocalDateTime.of(2020, 6, 14, 0, 0, 0))
-                            .endDate(LocalDateTime.of(2020, 12, 31, 23, 59, 59))
+                            .startDate(LocalDateTime.parse("2020-06-14T00:00:00"))
+                            .endDate(LocalDateTime.parse("2020-12-31T23:59:59"))
                             .priceList(1)
                             .productId(idto2.productId())
                             .priority(0)
@@ -106,8 +106,8 @@ class DomainPriceServiceTest {
                             .build(),
                     Price.builder()
                             .brandId(idto2.brandId())
-                            .startDate(LocalDateTime.of(2020, 6, 15, 16, 0, 0))
-                            .endDate(LocalDateTime.of(2020, 12, 31, 23, 59, 59))
+                            .startDate(LocalDateTime.parse("2020-06-15T16:00:00"))
+                            .endDate(LocalDateTime.parse("2020-12-31T23:59:59"))
                             .priceList(4)
                             .productId(idto2.productId())
                             .priority(0)
@@ -117,8 +117,8 @@ class DomainPriceServiceTest {
             );
             List<GetPricesOdto> expectedOdtos2 = List.of(GetPricesOdto.builder()
                             .brandId(idto2.brandId())
-                            .startDate(LocalDateTime.of(2020, 6, 14, 0, 0, 0))
-                            .endDate(LocalDateTime.of(2020, 12, 31, 23, 59, 59))
+                            .startDate(LocalDateTime.parse("2020-06-14T00:00:00"))
+                            .endDate(LocalDateTime.parse("2020-12-31T23:59:59"))
                             .priceList(1)
                             .productId(idto2.productId())
                             .priority(0)
@@ -127,8 +127,8 @@ class DomainPriceServiceTest {
                             .build(),
                     GetPricesOdto.builder()
                             .brandId(idto2.brandId())
-                            .startDate(LocalDateTime.of(2020, 6, 15, 16, 0, 0))
-                            .endDate(LocalDateTime.of(2020, 12, 31, 23, 59, 59))
+                            .startDate(LocalDateTime.parse("2020-06-15T16:00:00"))
+                            .endDate(LocalDateTime.parse("2020-12-31T23:59:59"))
                             .priceList(4)
                             .productId(idto2.productId())
                             .priority(0)
