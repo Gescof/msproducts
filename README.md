@@ -38,7 +38,7 @@ Before you begin, ensure you have met the following requirements:
 Clone the repository and navigate to the project's root directory:
 
 ```shell
-git clone https://github.com/yourusername/products-microservice.git
+git clone https://github.com/Gescof/products-microservice.git
 cd products-microservice
 ```
 
@@ -60,7 +60,7 @@ The project uses the following dependencies:
 - Flyway Core
 - H2 Database (runtime scope)
 - Spring Boot Starter Test (test scope)
-- The configuration for these dependencies is managed in the pom.xml file.
+- The configuration for these dependencies is managed in the [pom.xml](pom.xml) file.
 
 ## Usage
 
